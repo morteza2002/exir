@@ -1,0 +1,266 @@
+@font-face {
+  font-family: "Yekan";
+  src: url("../fonts/Yekan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFF; /* Arabic, Persian, and related scripts */
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype"); /* Replace with the actual path to roboto.ttf */
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0000-007F; /* Basic Latin */
+}
+
+body {
+  font-family: "Yekan", "Roboto", sans-serif;
+  margin: 0; /* حذف حاشیه‌های پیش‌فرض */
+  padding: 0; /* حذف پدینگ‌های پیش‌فرض */
+  background-color: #f9f9fa !important;
+}
+.bg-img-head {
+  background: url("../images/bg-head.png") no-repeat center center;
+  background-size: cover; /* Ensures the background image covers the entire element */
+  min-height: 630px;
+  position: relative;
+  bottom: 72px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  width: 100%;
+  /* Ensures the image is centered and fills the container */
+}
+.bg-img-app{
+  background: url(../images/app-bg.png);
+  background-size: cover; /* Ensures the background image covers the entire element */
+  min-height: 630px;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+button {
+  background-color: #003cd9; /* رنگ آبی برای دکمه‌ها */
+  color: white; /* رنگ متن دکمه‌ها */
+  border: none;
+  padding: 10px 15px;
+  margin-right: 10px; /* فاصله بین دکمه‌ها */
+  border-radius: 10px;
+}
+
+button:hover,
+button:focus,
+button:active {
+  background-color: white; /* رنگ سفید هنگام هاور و کلیک */
+  color: #003cd9; /* تغییر رنگ متن به آبی */
+  border: 1px solid #003cd9; /* اضافه کردن حاشیه آبی */
+}
+.search-input {
+  direction: rtl; /* برای قرار دادن placeholder سمت راست */
+}
+.search-input::placeholder {
+  text-align: right; /* متن placeholder را به سمت راست منتقل می‌کند */
+}
+.input-group-text {
+  background: none; /* پس‌زمینه دکمه آیکون را حذف می‌کند */
+  border: none; /* حاشیه دکمه آیکون را حذف می‌کند */
+}
+.hover-affect-more-arz:hover {
+  color: #f9f9fa;
+  background-color: #003cd9;
+}
+/* Make the play icon larger */
+.play-icon {
+  font-size: 4rem; /* Adjust the size as needed */
+}
+
+/* Remove the blue hover effect and white background */
+#play-button {
+  background-color: transparent; /* Ensure button background is transparent */
+  border: none; /* Remove any border */
+  outline: none; /* Remove outline */
+  box-shadow: none; /* Remove shadow */
+}
+
+/* Remove focus and active states */
+#play-button:focus,
+#play-button:active,
+#play-button:hover {
+  background-color: transparent; /* Keep background transparent */
+  outline: none; /* Remove any outline */
+  box-shadow: none; /* Ensure no shadow appears */
+}
+/* سبک‌های ساده برای مخفی کردن آیتم‌ها */
+.hidden {
+  display: none !important;
+}
+
+
+.design-font {
+  line-height: 1.6;
+  color: #333 !important;
+  background-color: #f9f9f9 !important;
+}
+.design-font > h3 {
+  color: #525252 !important;
+  font-size: 20px;
+}
+
+.design-font h4 {
+  color: #525252 !important;
+  font-size: 17px;
+}
+.design-font p {
+  color: #7e7f7f;
+  font-size: 20px;
+}
+.accordion-button {
+  justify-content: space-between; /* Align button text and icon with space between */
+}
+
+.accordion-button::after {
+  order: -1; /* Move the icon to the left of the text */
+  margin-right: 0.5rem; /* Add some margin to the right of the icon */
+}
+
+.icon-left span {
+  order: 1; /* Keep the text on the right side */
+}
+.logo-item {
+  display: none !important; /* مخفی کردن آیتم به صورت پیش‌فرض */
+}
+
+.logo-item.show {
+  display: flex !important; /* نمایش آیتم با کلاس show */
+}
+
+
+
+.swiper-image{
+  width: 300px !important;
+}
+
+.text-gray {
+  color: gray;
+}
+.text-black {
+  color: black;
+}
+
+
+@media (max-width: 425px) {
+  .bg-img-head {
+    min-height: 400px; /* Adjusted height for smaller screens */
+    background-size: cover; /* Ensures the image fits within the container */
+    background-position: center; /* Center the image */
+  }
+  .container-fluid {
+    flex-wrap: nowrap;
+  }
+  .images-container,
+  .navbar-toggler {
+    flex: 0 1 auto;
+  }
+  .images-container {
+    justify-content: flex-start;
+  }
+  .navbar-toggler {
+    margin-left: auto;
+  }
+  .img-log-sig {
+    display: block !important;
+    width: 100px;
+  }
+  .img-single-log-si {
+    display: none;
+  }
+  .crypto-table th:nth-child(3), /* Hide the "حجم در 24 ساعت گذشته" header */
+  .crypto-table th:nth-child(4), /* Hide the "تغییرات" header */
+  .crypto-table td:nth-child(3), /* Hide the "حجم در 24 ساعت گذشته" data */
+  .crypto-table td:nth-child(4)  /* Hide the "تغییرات" data */ {
+    display: none;
+  }
+  .direction-image {
+    transform: rotate(270deg); /* Rotate the image by 270 degrees */
+    margin: 80px auto; /* Center the image horizontally by setting auto margins */
+    width: 150px; /* Set the desired width */
+    display: block; /* Ensure the element is block-level */
+    text-align: center; /* Center-align content within the block element */
+  }
+
+  .direction-image img {
+    width: 100%; /* Ensure the image fits within the parent container */
+    display: block; /* Ensure the image is block-level */
+  }
+  .img-responsive{
+    width: 100%;
+  }
+  .h2-responsive-why{
+    text-align: center !important;
+    font-size: 30px !important;
+  }
+
+  .responsive-akbar {
+    width: 100% !important; /* Make the section full width on smaller screens */
+  }
+
+  .swiper-slide img {
+    width: 100%; /* Make images responsive */
+    height: 100px; /* Maintain aspect ratio */
+  }
+
+  .responsive-img-hadieh{
+    width: 100%;
+  }
+
+  .gap-responsive{
+    gap: 150px !important;
+  }
+
+  .resp-footer{
+padding-left: 50px !important;
+text-align: center !important;
+  }
+}
+
+
+.responsive-akbar {
+  width: 100% !important; /* Full width on smaller screens */
+}
+
+.swiper {
+  width: 100%; /* Full width of the container */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%; /* Default width for larger screens */
+  /* Removed the incorrect gap property */
+}
+
+.swiper-slide img {
+  width: 100%; /* Make the image width 100% of the slide */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image covers the entire slide */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 425px) {
+  .swiper {
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  .swiper-slide {
+    width: 80%; /* Adjust slide width to make slides bigger */
+    margin: 0 10%; /* Add space around slides for small screens */
+  }
+
+  .swiper-slide img {
+    width: 100%; /* Make sure images take up full width of slides */
+    height: 200px; /* Set a specific height for images on small screens */
+    object-fit:fill; /* Ensure the image covers the height */
+  }
+}
+
+

@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
+    <div id="responsive-warning" style="display: none;">
+      <img src="images/responsive-warning.png" alt="فقط در سایزهای خاص قابل مشاهده است" style="max-width: 100%; height: auto;">
+    </div>
+    
+    <div id="main-site">
     <nav
       class="navbar container navbar-expand-lg navbar-light rounded fixed-top w-100"
       style="background-color: #0046ff; z-index: 11"
@@ -2041,7 +2046,34 @@
       </div>
     </footer>
     
+  </div>
+  <script>
+  function checkViewport() {
+  const width = window.innerWidth;
+  const allowedWidths = [425, 768, 1440];
 
+  const site = document.getElementById("main-site");
+  const warning = document.getElementById("responsive-warning");
+
+  if (!site || !warning) {
+    console.warn("main-site یا responsive-warning وجود نداره.");
+    return;
+  }
+
+  if (allowedWidths.includes(width)) {
+    site.style.display = "block";
+    warning.style.display = "none";
+  } else {
+    site.style.display = "none";
+    warning.style.display = "block";
+  }
+}
+
+window.addEventListener("load", checkViewport);
+window.addEventListener("resize", checkViewport);
+
+  </script>
+  
     <script src="javascript/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
